@@ -1,11 +1,9 @@
-local data = assert(vim.fn.stdpath "data") --[[@as string]]
-
 require("telescope").setup {
   extensions = {
     fzf = {},
     wrap_results = true,
     history = {
-      path = vim.fs.joinpath(data, "telescope_history.sqlite3"),
+      path = "~/.local/share/nvim/databases/telescope_history.sqlite3",
       limit = 100,
     },
   },

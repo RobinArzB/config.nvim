@@ -5,4 +5,5 @@ return {
       vim.cmd.colorscheme "gruvbuddy"
     end,
   },
+  { "blazkowolf/gruber-darker.nvim" },
 }

@@ -24,6 +24,7 @@ set({ "n", "v" }, "<leader>d", [["_d]])
 set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 set("n", "<leader>x", "<cmd>.lua<CR>", { desc = "Execute the current line" })
 set("n", "<leader><leader>x", "<cmd>source %<CR>", { desc = "Execute the current file" })
+set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Toggle hlsearch if it's on, otherwise just do "enter"
 set("n", "<CR>", function()

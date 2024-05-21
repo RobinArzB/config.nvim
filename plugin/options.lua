@@ -18,6 +18,8 @@ opt.showmode = false
 opt.cmdheight = 1 -- Height of the command bar
 opt.splitbelow = true
 opt.splitright = true
+opt.tabstop = 4
+opt.shiftwidth = 4
 
 opt.signcolumn = "yes"
 opt.shada = { "'10", "<0", "s10", "h" }

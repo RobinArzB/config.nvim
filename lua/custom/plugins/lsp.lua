@@ -98,7 +98,7 @@ return {
         },
 
         lexical = {
-          cmd = { "/home/robinho/.local/share/nvim/mason/bin/lexical", "server" },
+          cmd = { "/Users/robinho/.local/share/nvim/mason/bin/lexical", "server" },
           root_dir = require("lspconfig.util").root_pattern { "mix.exs" },
         },
 

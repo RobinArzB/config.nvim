@@ -97,14 +97,22 @@ return {
           -- TODO: Check if i still need the filtypes stuff i had before
         },
 
+        elixirls = {
+          cmd = { "/home/robinho/.local/share/nvim/mason/bin/elixir-ls" },
+          root_dir = require("lspconfig.util").root_pattern { "mix.exs" },
+          server_capabilities = {
+            -- completionProvider = true,
+            -- definitionProvider = false,
+            documentFormattingProvider = false,
+          },
+        },
+
         lexical = {
           cmd = { "/home/robinho/.local/share/nvim/mason/bin/lexical", "server" },
           root_dir = require("lspconfig.util").root_pattern { "mix.exs" },
         },
 
         clangd = {
-          -- TODO: Could include cmd, but not sure those were all relevant flags.
-          --    looks like something i would have added while i was floundering
           init_options = { clangdFileStatus = true },
           filetypes = { "c" },
         },

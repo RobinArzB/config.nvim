@@ -86,6 +86,10 @@ return {
           },
         },
 
+        jinja_lsp = {
+          filetypes = { "jinja" },
+        },
+
         ocamllsp = {
           manual_install = true,
           settings = {

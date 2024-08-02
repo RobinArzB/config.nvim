@@ -7,22 +7,6 @@ lspkind.init {}
 local cmp = require "cmp"
 
 cmp.setup {
-  formatting = {
-    format = lspkind.cmp_format {
-      mode = "symbol_text",
-      menu = {
-        buffer = "[buf]",
-        nvim_lsp = "[LSP]",
-        nvim_lua = "[api]",
-        path = "[path]",
-        luasnip = "[snip]",
-        gh_issues = "[issues]",
-        tn = "[TabNine]",
-        eruby = "[erb]",
-      },
-    },
-  },
-
   sources = {
     { name = "nvim_lsp" },
     { name = "cody" },
@@ -44,7 +28,7 @@ cmp.setup {
   -- Enable luasnip to handle snippet expansion for nvim-cmp
   snippet = {
     expand = function(args)
-      require("luasnip").lsp_expand(args.body)
+      vim.snippet.expand(args.body)
     end,
   },
 }
@@ -56,25 +40,3 @@ cmp.setup.filetype({ "sql" }, {
     { name = "buffer" },
   },
 })
-
-local ls = require "luasnip"
-ls.config.set_config {
-  history = false,
-  updateevents = "TextChanged,TextChangedI",
-}
-
-for _, ft_path in ipairs(vim.api.nvim_get_runtime_file("lua/custom/snippets/*.lua", true)) do
-  loadfile(ft_path)()
-end
-
-vim.keymap.set({ "i", "s" }, "<c-k>", function()
-  if ls.expand_or_jumpable() then
-    ls.expand_or_jump()
-  end
-end, { silent = true })
-
-vim.keymap.set({ "i", "s" }, "<c-j>", function()
-  if ls.jumpable(-1) then
-    ls.jump(-1)
-  end
-end, { silent = true })

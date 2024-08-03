@@ -8,7 +8,6 @@ return {
       "WhoIsSethDaniel/mason-tool-installer.nvim",
 
       { "j-hui/fidget.nvim", opts = {} },
-      { "https://git.sr.ht/~whynothugo/lsp_lines.nvim" },
 
       -- Autoformatting
       "stevearc/conform.nvim",
@@ -107,7 +106,7 @@ return {
         },
 
         elixirls = {
-          cmd = { "/home/robinho/.local/share/nvim/mason/bin/elixir-ls" },
+          cmd = { "/Users/robinho/.local/share/nvim/mason/bin/elixir-ls" },
           root_dir = require("lspconfig.util").root_pattern { "mix.exs" },
           server_capabilities = {
             -- completionProvider = true,
@@ -117,7 +116,7 @@ return {
         },
 
         lexical = {
-          cmd = { "/home/robinho/.local/share/nvim/mason/bin/lexical", "server" },
+          cmd = { "/Users/robinho/.local/share/nvim/mason/bin/lexical", "server" },
           root_dir = require("lspconfig.util").root_pattern { "mix.exs" },
           server_capabilities = {
             completionProvider = vim.NIL,
@@ -223,9 +222,6 @@ return {
           }
         end,
       })
-
-      require("lsp_lines").setup()
-      vim.diagnostic.config { virtual_text = false }
     end,
   },
 }

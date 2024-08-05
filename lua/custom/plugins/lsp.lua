@@ -59,6 +59,7 @@ return {
         cssls = true,
         pylsp = true,
         helm_ls = true,
+        jinja_lsp = true,
         -- pyright = true,
         -- ruff = true,
 
@@ -84,10 +85,6 @@ return {
               schemas = require("schemastore").yaml.schemas(),
             },
           },
-        },
-
-        jinja_lsp = {
-          filetypes = { "jinja" },
         },
 
         ocamllsp = {

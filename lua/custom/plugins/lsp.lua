@@ -58,7 +58,6 @@ return {
         templ = true,
         cssls = true,
         pylsp = true,
-        helm_ls = true,
         jinja_lsp = true,
         -- pyright = true,
         -- ruff = true,
@@ -83,6 +82,32 @@ return {
                 url = "",
               },
               schemas = require("schemastore").yaml.schemas(),
+            },
+          },
+        },
+
+        helm_ls = {
+          settings = {
+            ["helm-ls"] = {
+              logLevel = "info",
+              valuesFiles = {
+                mainValuesFile = "values.yaml",
+                lintOverlayValuesFile = "values.lint.yaml",
+                additionalValuesFilesGlobPattern = "values*.yaml",
+              },
+              yamlls = {
+                path = "/home/robinho/.local/share/nvim/mason/bin/yaml-language-server",
+                enabled = true,
+                diagnosticsLimit = 50,
+                showDiagnosticsDirectly = false,
+                config = {
+                  schemas = {
+                    kubernetes = "templates/**",
+                  },
+                  completion = true,
+                  hover = true,
+                },
+              },
             },
           },
         },

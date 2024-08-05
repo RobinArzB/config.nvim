@@ -5,4 +5,7 @@ vim.filetype.add {
     jinja2 = "jinja",
     j2 = "jinja",
   },
+  pattern = {
+    [".*/templates/.*%.yaml"] = "helm",
+  },
 }

@@ -8,6 +8,7 @@ return {
       "WhoIsSethDaniel/mason-tool-installer.nvim",
 
       { "j-hui/fidget.nvim", opts = {} },
+      { "https://git.sr.ht/~whynothugo/lsp_lines.nvim" },
 
       -- Autoformatting
       "stevearc/conform.nvim",
@@ -57,7 +58,7 @@ return {
         templ = true,
         cssls = true,
         pylsp = true,
-        helm_ls = true,
+        jinja_lsp = true,
         -- pyright = true,
         -- ruff = true,
 
@@ -85,8 +86,30 @@ return {
           },
         },
 
-        jinja_lsp = {
-          filetypes = { "jinja" },
+        helm_ls = {
+          settings = {
+            ["helm-ls"] = {
+              logLevel = "info",
+              valuesFiles = {
+                mainValuesFile = "values.yaml",
+                lintOverlayValuesFile = "values.lint.yaml",
+                additionalValuesFilesGlobPattern = "values*.yaml",
+              },
+              yamlls = {
+                path = "/Users/robinho/.local/share/nvim/mason/bin/yaml-language-server",
+                enabled = true,
+                diagnosticsLimit = 50,
+                showDiagnosticsDirectly = false,
+                config = {
+                  schemas = {
+                    kubernetes = "templates/**",
+                  },
+                  completion = true,
+                  hover = true,
+                },
+              },
+            },
+          },
         },
 
         ocamllsp = {
@@ -222,6 +245,9 @@ return {
           }
         end,
       })
+
+      require("lsp_lines").setup()
+      vim.diagnostic.config { virtual_text = true, virtual_lines = false }
     end,
   },
 }

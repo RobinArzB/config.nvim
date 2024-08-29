@@ -4,8 +4,11 @@ vim.filetype.add {
     jinja = "jinja",
     jinja2 = "jinja",
     j2 = "jinja",
+    gotempl = "gotempl",
   },
   pattern = {
-    [".*/templates/.*%.yaml"] = "helm",
+    [".*/templates/.*%.tpl"] = "helm",
+    [".*/templates/.*%.ya?ml"] = "helm",
+    ["helmfile.*%.ya?ml"] = "helm",
   },
 }

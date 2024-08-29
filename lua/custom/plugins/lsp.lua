@@ -59,6 +59,7 @@ return {
         cssls = true,
         pylsp = true,
         jinja_lsp = true,
+        helm_ls = true,
         -- pyright = true,
         -- ruff = true,
 
@@ -86,31 +87,31 @@ return {
           },
         },
 
-        helm_ls = {
-          settings = {
-            ["helm-ls"] = {
-              logLevel = "info",
-              valuesFiles = {
-                mainValuesFile = "values.yaml",
-                lintOverlayValuesFile = "values.lint.yaml",
-                additionalValuesFilesGlobPattern = "values*.yaml",
-              },
-              yamlls = {
-                path = "/home/robinho/.local/share/nvim/mason/bin/yaml-language-server",
-                enabled = true,
-                diagnosticsLimit = 50,
-                showDiagnosticsDirectly = false,
-                config = {
-                  schemas = {
-                    kubernetes = "templates/**",
-                  },
-                  completion = true,
-                  hover = true,
-                },
-              },
-            },
-          },
-        },
+        -- helm_ls = {
+        --   settings = {
+        --     ["helm-ls"] = {
+        --       logLevel = "info",
+        --       valuesFiles = {
+        --         mainValuesFile = "values.yaml",
+        --         lintOverlayValuesFile = "values.lint.yaml",
+        --         additionalValuesFilesGlobPattern = "values*.yaml",
+        --       },
+        --       yamlls = {
+        --         path = "/home/robinho/.local/share/nvim/mason/bin/yaml-language-server",
+        --         enabled = true,
+        --         diagnosticsLimit = 50,
+        --         showDiagnosticsDirectly = false,
+        --         config = {
+        --           schemas = {
+        --             kubernetes = "templates/**",
+        --           },
+        --           completion = true,
+        --           hover = true,
+        --         },
+        --       },
+        --     },
+        --   },
+        -- },
 
         ocamllsp = {
           manual_install = true,

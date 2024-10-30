@@ -64,7 +64,7 @@ return {
         -- ruff = true,
 
         -- Probably want to disable formatting for this lang server
-        ts_ls = true,
+        tsserver = true,
 
         jsonls = {
           settings = {

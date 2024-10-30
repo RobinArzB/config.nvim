@@ -1,4 +1,5 @@
 local set = vim.keymap.set
+local k = vim.keycode
 
 -- Basic movement keybinds, these make navigating splits easy for me
 set("n", "<c-j>", "<c-w><c-j>")
@@ -33,7 +34,7 @@ set("n", "<CR>", function()
     vim.cmd.nohl()
     return ""
   else
-    return "<CR>"
+    return k "<CR>"
   end
 end, { expr = true })
 
@@ -47,7 +48,6 @@ set("n", "<right>", "gt")
 set("n", "]d", vim.diagnostic.goto_next)
 set("n", "[d", vim.diagnostic.goto_prev)
 
--- These mappings control the size of splits (height/width)
 set("n", "<M-,>", "<c-w>5<")
 set("n", "<M-.>", "<c-w>5>")
 set("n", "<M-t>", "<C-W>+")

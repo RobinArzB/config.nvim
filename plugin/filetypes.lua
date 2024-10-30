@@ -10,5 +10,6 @@ vim.filetype.add {
     [".*/templates/.*%.tpl"] = "helm",
     [".*/templates/.*%.ya?ml"] = "helm",
     ["helmfile.*%.ya?ml"] = "helm",
+    [".*[Dd]ockerfile.*"] = "dockerfile",
   },
 }
